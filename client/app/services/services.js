@@ -4,7 +4,7 @@ angular.module('shortly.services', [])
   var addOne = function(link){
     return $http({
       method: 'POST',
-      url: '/api/links', //watch routes.js page
+      url:'/api/links', //watch routes.js page
       data: link
     })
     .then(function (resp){
@@ -14,7 +14,7 @@ angular.module('shortly.services', [])
   var getAll = function (){
     return $http({
       method: 'GET',
-      url: '/api/links'
+      url:'/api/links'
     })
     .then(function(resp){
       return resp.data

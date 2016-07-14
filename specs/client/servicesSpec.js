@@ -30,6 +30,7 @@ describe('Services', function () {
     });
 
     it('should get all links with `getAll`', function () {
+      
       var mockResponse = [
         { title: 'Twitter',
           url: 'https://twitter.com' },

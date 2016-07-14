@@ -1,10 +1,10 @@
 angular.module('shortly.services', [])
 
-.factory('Links', function ($http) {
+.factory('Links', function ($http) { // bring the link(data) from from server
   var addOne = function(link){
     return $http({
       method: 'POST',
-      url: '/api/links',
+      url: '/api/links', //watch routes.js page
       data: link
     })
     .then(function (resp){

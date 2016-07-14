@@ -9,8 +9,23 @@
     <h1>Shortly</h1>
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-    <div ng-view></div>
+    <div class="navigation">
+      <ul>
+        <li>
+          <a href='#/links' class="create">Links</a>
+        </li>
+        <li>
+          <a href='#/shorten' class="index selected">Shorten</a>
+        </li>
+        <a href="#/logout" class="logout">Logout</a>
+      </ul>
+    </div>
+    <div id="content" ng-view> 
 
+    </div>
+
+<!--     <a href='#/shorten'>shorten</a>
+    <a href='#/links'>links</a> -->
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
 

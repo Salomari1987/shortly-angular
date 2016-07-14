@@ -1,11 +1,11 @@
 <div id='container'>
-	<form name='myForm'>
-		<input name='input' type='text'ng-model='link.url'>
-    	<input type="submit">
+	<form name='myForm' novalidate>
+		<input  class='text' name='input' type='text' ng-model='link.url' ng-minlength='1' ng-pattern="regex" required>
+    	<button value='Shorten' ng-click='addLink()' >Clocl</button>
 	</form>
+		<span ng-show='myForm.input.$error.required'>URL required</span>
+		<span ng-show='myForm.input.$error.pattern'>URL is invalid</span>
 
-	<span ng-show='myForm.input.required'>URL required</span>
-	<span ng-show='myForm.input.invalid'>URL is invalid</span>
 </div>
 
 

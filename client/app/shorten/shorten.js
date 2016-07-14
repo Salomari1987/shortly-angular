@@ -1,13 +1,15 @@
 angular.module('shortly.shorten', [])
 
 .controller('ShortenController', function ($scope, $location, Links) {
-	$scope.link = {} 
+	$scope.link = {};
+	$scope.regex = '^(http|https)://.*'
 	$scope.addLink = function(){ // this will equal the data that the factiory function addOne bring it to
 		Links.addOne($scope.link)
-			.then(function(link) {
+			.then(function(resp) {
+				$location.path('/links')
 		})
 		.catch(function(err){
-			$scope.message = 'Enter a valid URL'
+			console.log(err)
 		})		
 	}
  });

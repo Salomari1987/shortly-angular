@@ -1,24 +1,29 @@
 angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
-  var createLink = function(link){
+  var addOne = function(link){
     return $http({
       method: 'POST',
-      url: '/api/links/',
+      url: '/api/links',
       data: link
     })
     .then(function (resp){
-      return resp.data
+      return resp
     })
   }
-  var viewLinks = function (){
+  var getAll = function (){
     return $http({
       method: 'GET',
-      url: '/api/links/'
+      url: '/api/links'
     })
     .then(function(resp){
       return resp.data
     })
+  }
+
+  return{
+    getAll:getAll,
+    addOne:addOne
   }
 })
 .factory('Auth', function ($http, $location, $window) {
@@ -65,6 +70,7 @@ angular.module('shortly.services', [])
     signin: signin,
     signup: signup,
     isAuth: isAuth,
-    signout: signout
+    signout: signout,
+
   };
 });
